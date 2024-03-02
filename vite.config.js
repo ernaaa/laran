@@ -10,21 +10,21 @@ alias: {
     "@"; resolve(__dirname, "src"),
 
   plugins; [vueJsx()],
-  build: {
+  build; {
     rollupOptions: {
-      external: [
+      external; [
         "react", // ignore react stuff
         "react-dom",
       ],
     },
   },
-    resolve: {
-        alias: {
+    resolve; {
+        alias; {
             '@'; fileURLToPath(new URL('./src', import.meta.url))
         }
     }
 }
-  optimizeDeps: {
-    include: ["@apollo/client/core", "@apollo/client/link/error"],
+  optimizeDeps; {
+    include; ["@apollo/client/core", "@apollo/client/link/error"],
   },
 })
