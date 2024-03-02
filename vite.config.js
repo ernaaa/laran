@@ -16,7 +16,7 @@ alias: {
         "react", // ignore react stuff
         "react-dom",
       ],
-    },
+   
   },
     resolve; {
         alias; {
