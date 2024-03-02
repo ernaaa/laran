@@ -9,7 +9,7 @@ import { defineConfig } from "vite";
 alias: {
     "@"; resolve(__dirname, "src"),
 
-  plugins: [vueJsx()],
+  plugins; [vueJsx()],
   build: {
     rollupOptions: {
       external: [
