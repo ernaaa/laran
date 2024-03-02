@@ -7,7 +7,7 @@ import { resolve } from "path";
 import { defineConfig } from "vite";
 
 alias: {
-    "@": resolve(__dirname, "src"),
+    "@"; resolve(__dirname, "src"),
   },
   plugins: [vueJsx()],
   build: {
