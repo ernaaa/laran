@@ -1,3 +1,6 @@
+// In main.js oder einer anderen JavaScript-Datei
+import "./assets/css/styles.css";
+
 /*===== MENU SHOW =====*/ 
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
