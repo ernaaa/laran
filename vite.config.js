@@ -6,15 +6,7 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 import { resolve } from "path";
 import { defineConfig } from "vite";
 
-export default defineConfig({
-      css: {
-        preprocessorOptions: {
-            scss: {
-                additionalData:`@import "@/scss/variables.scss";`
-            }
-        }
-    },
-    alias: {
+alias: {
     "@": resolve(__dirname, "src"),
   },
   plugins: [vueJsx()],
@@ -31,6 +23,7 @@ export default defineConfig({
             '@': fileURLToPath(new URL('./src', import.meta.url))
         }
     }
+}
   optimizeDeps: {
     include: ["@apollo/client/core", "@apollo/client/link/error"],
   },
