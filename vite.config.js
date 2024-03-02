@@ -1,29 +1,27 @@
-import { fileURLToPath, URL } from 'url'
-
-
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vite";
+import vue from '@vitejs/plugin-vue';
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import { resolve } from "path";
-import { defineConfig } from "vite";
+import { fileURLToPath, URL } from 'url';
 
-alias: {
-    "@"; resolve(__dirname, "src"),
-
-  plugins; [vueJsx()],
-  build; {
+// Exportieren der Konfiguration mit defineConfig für bessere Typunterstützung
+export default defineConfig({
+  plugins: [vue(), vueJsx()], // Hinzufügen von vue() zum Plugin-Array
+  resolve: {
+    alias: {
+      // Korrekte Verwendung von Alias
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
+  build: {
     rollupOptions: {
-      external; [
-        "react", // ignore react stuff
+      external: [
+        "react", // Ignorieren von React
         "react-dom",
       ],
-   
-  
-    resolve; {
-        alias; {
-            '@'; fileURLToPath(new URL('./src', import.meta.url))
-        }
-    }
-}
-  optimizeDeps; {
-    include; ["@apollo/client/core", "@apollo/client/link/error"]
-  }
+    },
+  },
+  optimizeDeps: {
+    include: ["@apollo/client/core", "@apollo/client/link/error"],
+  },
+});
