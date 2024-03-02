@@ -26,5 +26,5 @@ alias: {
 }
   optimizeDeps; {
     include; ["@apollo/client/core", "@apollo/client/link/error"],
-  },
+  
 })
